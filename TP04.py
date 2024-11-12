@@ -110,39 +110,7 @@ x_max, y_max = bornes_max[0][-1], bornes_max[1][-1]
 plt.plot(bornes_min[0],bornes_min[1],'rs', label = 'x_min')
 plt.plot(bornes_max[0],bornes_max[1],'bs', label = 'x_max')
 plt.legend()
-plt.xlabel('Valeurs de $x$')
-plt.ylabel('Valeurs de $f_1(x)$')
-plt.title('Recherche du minimum de $f_1$ par dichotomie')
-plt.grid()
-
-message = 'Precision = {}'.format(precision)
-message += '\nCV en {} iterations'.format(n_iter)
-message += '\nBorne infÃ©rieure :'
-message += '\n  x_min = {:6.4f}'.format(x_min)
-message += '\n  y_min = {:6.4f}'.format(y_min)
-message += '\nBorne supÃ©rieure :'
-message += '\n  x_max = {:6.4f}'.format(x_max)
-message += '\n  y_max = {:6.4f}'.format(y_max)
-plt.text(1,-5,message)
-print(n_iter)
-"""
-#%%
-#MÃ©thode de Newton 
-
-#%%
-f = f1
-x0=-4
-def NewtonMin(f,df1,df2,x0,precision,iter_max):
-    epsilon = 10
-    nb_iter = 0
-    Erreur = False
-    while epsilon> precision and nb_iter<iter_max:
-        Vderiv1 = df1(x0)
-        Vderiv2 = df2(x0)
-        try:
-            solution = x0 - (Vderiv1/Vderiv2)
-        except ZeroDivisionError:
-            Erreur = True
+ur = True
             break
         epsilon = np.abs(solution-x0)
         x0=solution
